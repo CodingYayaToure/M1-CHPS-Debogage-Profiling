@@ -1,0 +1,22 @@
+# Build
+build/
+CMakeCache.txt
+CMakeFiles/
+*.a
+*.o
+Makefile
+cmake_install.cmake
+
+# Données de benchmark
+*.data
+
+# LaTeX
+*.aux
+*.log
+*.toc
+*.out
+*.synctex.gz
+
+# OS
+.DS_Store
+Thumbs.db

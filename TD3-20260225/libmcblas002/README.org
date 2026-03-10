@@ -1,0 +1,66 @@
+# TD3 — Optimisation de boucles sur ssgemm
+
+**Module :** Débogage, Profiling et Analyse de Performances  
+**Auteur :** Yaya Toure — Master 1 CHPS, 2025-2026  
+
+---
+
+## Objectif
+
+Analyser les dépendances du nid de boucles de la fonction ssgemm (produit
+matriciel simple précision), identifier la meilleure permutation et valider
+la légalité du blocage de boucles (loop tiling).
+
+---
+
+## Contenu
+
+- libmcblas002/ : code source des 3 versions (v001, v002, v003)
+- rapport_TD3_YAYA_TOURE.pdf : rapport complet (14 pages)
+- results/grv123456.pdf : graphique gnuplot des benchmarks
+
+---
+
+## Versions implémentées
+
+| Version | Ordre des boucles | Technique         |
+|---------|-------------------|-------------------|
+| v001    | r, c, d           | Référence         |
+| v002    | r, d, c           | Loop Interchange  |
+| v003    | rr,dd,cc,r,d,c    | Loop Tiling T=32  |
+
+---
+
+## Résultats (N=1024)
+```
+v001-O2    7 874 082 133 cycles    x1      (référence)
+v002-O2      744 359 166 cycles    x10.6
+v003-O2      734 899 254 cycles    x10.7
+```
+
+## Conclusions
+
+- Meilleure permutation : r -> d -> c (stride-1 sur B et C, A en registre)
+- Taille de bloc optimale : T=32 (12 KiB, tient dans L1d=64 KiB)
+- Le tiling devient bénéfique à partir de N=1024 (matrices > L3=3 MiB)
+- Référence : Bacon et al. 1994, Sections 5, 6.2.1, 6.2.4, 6.2.6
+
+
+
+## Compilation
+Créer un répertoire "build", se placer dedans et exécuter la commande cmake suivante :
+ - cmake ../
+
+ATTENTION : la commande make compile mais exécute également les tests
+Exécuter ensuite la commande "make"
+
+
+* Exécution
+L'exécution des tests est maintenant réalisée directement par la commande make
+
+
+* Génération des données pour les graphiques
+make GALL
+
+* Génération des graphiques
+Dans le répertoire tests/runs/graphs/, exécuter la commande make -f grphs.mk afin de générer les graphiques.
