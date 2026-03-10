@@ -1,11 +1,17 @@
 # M1 CHPS — Débogage, Profiling et Analyse de Performances
 
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Language](https://img.shields.io/badge/Language-C%2B%2B17-blue.svg)
+![Compiler](https://img.shields.io/badge/Compiler-GCC%2011.2-blue.svg)
+![SIMD](https://img.shields.io/badge/SIMD-AVX%20256bit-orange.svg)
+![Perf](https://img.shields.io/badge/Profiling-Linux%20perf-red.svg)
+![University](https://img.shields.io/badge/Université-Perpignan-darkgreen.svg)
+
 **Auteur :** Yaya Toure  
 **Formation :** Master 1 Calcul Haute Performance et Simulation (CHPS)  
 **Université :** Université de Perpignan Via Domitia  
 **Année universitaire :** 2025-2026  
 **Licence :** MIT  
-
 ---
 
 ## Description
