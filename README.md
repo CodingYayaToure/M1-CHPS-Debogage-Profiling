@@ -11,7 +11,7 @@
 **Formation :** Master 1 Calcul Haute Performance et Simulation (CHPS)  
 **Université :** Université de Perpignan Via Domitia  
 **Année universitaire :** 2025-2026  
-**Licence :** MIT  
+  
 ---
 
 ## Description
