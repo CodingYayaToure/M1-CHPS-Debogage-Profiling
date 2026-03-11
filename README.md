@@ -7,7 +7,7 @@
 ![Perf](https://img.shields.io/badge/Profiling-Linux%20perf-red.svg)
 ![University](https://img.shields.io/badge/Université-Perpignan-darkgreen.svg)
 
-**Auteur :** Yaya Toure  
+ 
 **Formation :** Master 1 Calcul Haute Performance et Simulation (CHPS)  
 **Université :** Université de Perpignan Via Domitia  
 **Année universitaire :** 2025-2026  
